@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+
+* {              /*Применяем для всего документа*/
+  margin: 0; /*Убираем отст */
+  padding: 0; /*Убираем отступы*/
+  outline: none; /*Убиравем обводки */
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #fafafa; /* цвет фона */
+  font-family: Trebuchet MS, Helvetica; /*шрифт по умолчанию */
+}
+
+/* Шапка сайта */
+
+header {
+  width: 100%;
+  padding: 10px 0.5% 0px 0.5%; /* Отступ:сверху слева снизу справа */
+  background: transparent; /* Прозрачность заднего фона*/
+  float: left; /* слева*/
+  position: fixed; /* зафиксирован сверху для срола со страницей */
+}
+
+header #logo {
+  color: #fff;
+  cursor: pointer;
+}
+
+header #logo span {  /*Дополнительный стиль для надписи в лого */
+  font-size: 1.7em; /* размер шрифта */
+  line-height: 45px; /* отступ между строками */
+  margin-left: 40px; /*отступ слева*/
+  font-family: 'Suez One', serif; /* Устанавливаем шрифт */
+}
+
+@media (min-width: 701px) { /* если сайт по ширине больще 701пикселя, то применяем стили:  */
+  #logo { /*Применяем новый стиль к лого */
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) { /* если сайт по ширине меньше 700пикселя, то применяем стили:  */
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
+}
+
+#about { /* блок шапки с ссылками */
+  text-align: center; /* устанавливаем по центру */
+  font-size: 1em; /* размер */
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+#about > a {color: #fff} /* делаем все ссылки белыми */
+
+#about > a:hover { /* меняем стиль при наведении на ссылку */
+  color: #b0b0b0;
+  text-decoration: underline; /* Подчеркивает текст*/
+}
+
+#about > a:not(:last-child) { /* отступ между ссылками, Выбираем все ссылки кроме последней */
+  margin-right: 7%;
+}
+
+/* Стили для фиксированной шапки */
+
+.fixed { /* изменяем шапку при прокрутки страницы */
+  z-index: 5000; /* Что бы шапка все перекрывала */
+  background-color: #fff;
+  border-bottom: 1px solid silver;
+}
+
+header.fixed #logo { /* изменяем лого при прокрутке */
+  color: #343434;
+}
+
+.fixed #about a {color: #343434} /* изменяем цвет ссылки при прокрути */
+.fixed #about a:hover {color: #7c7c7c}  /* изменяем цвет при наведении на ссылки */
+
+/* Главный блок на сайте */
+
+#top { /* Блок топ*/
+  width: 100%;
+  background-image: url(https://www.lovelymockups.com/wp-content/uploads/2017/01/mackbook-on-table.jpg);
+  background-blend-mode: multiply; /* Для наложение нескольких слоев на один блок*/
+  background-color: #2e3a44;
+  background-size: cover; /*Для того что бы расстянуть на весь экран */
+  text-align: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+@media (min-width: 1001px) { /* если ширина больше 1001пх  */
+  #top {
+    font-size: 3em;
+    height: 1000px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) { /* если ширина от 1000 до 651пх */
+  #top {
+    font-size: 2em;
+    height: 600px;
+  }
+}
+
+@media (max-width: 650px) { /* если ширина меньше 650пх  */
+  #top {
+    font-size: 1.3em;
+    padding-top: 50%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 450px) {
+  #top {
+    padding-top: 50%;
+    font-size: 0.9em;
+  }
+}
+
+#top h1 { /*устанавливаем текст по центру */
+  padding-top: 20%;
+}
+
+#top h3 {
+  color: #ccc;
+}
+
+/* Блок с возможностями */
+
+#main {
+  float: left;
+  background-color: #f6f6f6;
+  border-top: 2px solid silver;
+  color: #484848;
+  font-size: 1.3em;
+}
+
+@media (min-width: 1401px) {
+  #main {
+    padding: 100px 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 1400px) {
+  #main {
+    padding: 100px 10%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  #main div {
+    width: 98%!important; /* блоки в один ряд */
+    margin-bottom: 20px;
+  }
+}
+
+#main div { /* изменяем блоки в мэйн(делаем 2 блока с разных сторон) */
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+}
+
+#main h2 {font-size: 3em}
+#main span {color: #a0a0a0}
+
+/* Блок с преимуществами */
+
+#overview {
+  float: left;
+  background-image: url(https://images.unsplash.com/1/work-station-straight-on-view.jpg?ixlib=rb-0.3.5&s=d055e15d0b8fd2de7295b726274d312b&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb);
+  background-blend-mode: multiply; /* для наложения на фон  */
+  background-color: #403f40;
+  background-size: cover; /* растянули на всю ширину*/
+  background-attachment: fixed;
+
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+#overview h2 {font-size: 4em}
+#overview h4 {color: #ccc; font-size: 1.5em}
+
+@media (min-width: 561px) {
+  #overview h2 {font-size: 4em}
+}
+
+@media (max-width: 560px) {
+  #overview h2 {font-size: 2em}
+}
+
+#overview .img { /*изменяем размеры блока */
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  margin-top: 50px;
+}
+
+#overview .img:nth-child(odd) { /* выбираем нечетный блок  */
+  margin-left: 18%;
+}
+
+#overview img { /* изменяем изображения*/
+  background: #fafafa;
+  padding: 5px;
+  border: 2px solid silver;
+  float: left;
+  width: 100%;
+  max-width: 500px;
+}
+
+#overview span {
+  float: left;
+  width: 100%;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  #overview .img {
+    width: 80%!important;
+    margin-right: 0!important;
+    margin-left: 10%!important;
+  }
+}
+
+/* Блок с контактами */
+#contacts {
+  width: 100%;
+  float: left;
+  padding-bottom: 40px;
+  padding-top: 70px;
+  border-top: 4px solid #ccc;
+  background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+}
+
+#contacts h5 {font-size: 3em; color: #4f4f4f}
+
+#form_input {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+@media (min-width: 1051px) {
+  #form_input {
+    width: 35%;
+    margin-left: 38%;
+  }
+}
+
+@media (max-width: 1050px) {
+  #form_input {
+    width: 90%;
+    margin-left: 10%;
+  }
+}
+
+#form_input label {
+  color: #505050;
+  cursor: pointer;
+  font-size: 1.4em;
+  font-family: 'Roboto Slab', serif;
+}
+
+#form_input label > span {
+  color: #e87e7e;
+}
+
+#form_input input,#form_input textarea {
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 10px 2%;
+  border-radius: 7px;
+  border: 2px solid silver;
+  font-size: 0.9em;
+  color: #4a4a4a;
+}
+
+#form_input input:focus, #form_input textarea:focus {  /* При нажатии на форму  */
+  border-color: #333;
+}
+
+.btn { /* Стили для кнопки */
+  float: left;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 1.2em;
+  background-color: #ec6550;
+  text-shadow: #454545 0 0 2px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn:hover {
+  background-color: #c15443;
+}
+
+/* Вопросы и ответы */
+
+#faq {
+  background-color: #fff;
+  border-top: 2px dashed #e4e3e3;
+  width: 100%;
+  float: left;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media (min-width: 801px) {
+  #faq div {
+    width: 25%;
+    margin-left: 6%;
+    float: left;
+  }
+}
+
+@media (max-width: 800px) {
+  #faq div {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+  }
+}
+
+#faq .title {
+  font-weight: lighter;
+  color: #a3a0ad;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+}
+
+#faq .heading {
+  color: #7d7d7d;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#faq p {
+  font-family: Arimo, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #4a4a4a;
+  font-size: 0.95em;
+  margin-bottom: 40px;
+}
